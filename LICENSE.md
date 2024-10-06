@@ -1,6 +1,6 @@
 ISC License
 
-Copyright (c) 2020, Steve Winton <stevewinton@gmail.com> (https://github.com/swinton)
+Copyright (c) 2020, Steve Winton <stevewinton@gmail.com> (https://github.com/gentslava)
 
 Permission to use, copy, modify, and/or distribute this software for any
 purpose with or without fee is hereby granted, provided that the above

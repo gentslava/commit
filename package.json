@@ -1,5 +1,5 @@
 {
-  "name": "@swinton/commit",
+  "name": "@gentslava/commit",
   "version": "2.0.0",
   "description": "Create a verified commit with GitHub Actions",
   "main": "dist/index.js",
@@ -12,15 +12,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/swinton/commit.git"
+    "url": "git+https://github.com/gentslava/commit.git"
   },
   "keywords": [],
-  "author": "Steve Winton <stevewinton@gmail.com> (https://github.com/swinton)",
+  "author": "Steve Winton <stevewinton@gmail.com> (https://github.com/gentslava)",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/swinton/commit/issues"
+    "url": "https://github.com/gentslava/commit/issues"
   },
-  "homepage": "https://github.com/swinton/commit#readme",
+  "homepage": "https://github.com/gentslava/commit#readme",
   "devDependencies": {
     "@eslint/eslintrc": "^3.1.0",
     "@eslint/js": "^9.12.0",
