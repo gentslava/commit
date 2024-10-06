@@ -2,7 +2,7 @@ name: release v2
 on:
   push:
     branches:
-      - main
+      - master
 
   # Trigger release manually
   workflow_dispatch:
@@ -18,7 +18,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           export SHA=$( gh api \
-            /repos/$GITHUB_REPOSITORY/git/refs/heads/main \
+            /repos/$GITHUB_REPOSITORY/git/refs/heads/master \
             | jq --raw-output '.object.sha' )
           gh api /repos/$GITHUB_REPOSITORY/git/refs \
             --field sha="$SHA" \
