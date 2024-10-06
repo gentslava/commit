@@ -8,7 +8,7 @@ export class Commit extends Resource {
     readonly repo: Repo,
     readonly tree: Tree,
     readonly message: string,
-    readonly parents: string[]
+    readonly parents: string[],
   ) {
     super();
   }
@@ -25,7 +25,7 @@ export class Commit extends Resource {
         message: this.message,
         tree: this.tree.sha,
         parents: this.parents,
-      }
+      },
     );
 
     this.sha = response.data.sha;

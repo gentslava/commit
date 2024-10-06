@@ -7,7 +7,7 @@ export interface InputOptions extends core.InputOptions {
 
 export default function getInput(
   name: string,
-  options: InputOptions = {}
+  options: InputOptions = {},
 ): string | null {
   const value = core.getInput(name, options);
 

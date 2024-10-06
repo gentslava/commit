@@ -9,7 +9,7 @@ export class Tree extends Resource {
   constructor(
     readonly repo: Repo,
     readonly blobs: Blob[],
-    readonly parentOid?: string
+    readonly parentOid?: string,
   ) {
     super();
   }
@@ -34,7 +34,7 @@ export class Tree extends Resource {
           };
         }),
         base_tree: this.parentOid,
-      }
+      },
     );
 
     this.sha = response.data.sha;

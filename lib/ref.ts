@@ -7,7 +7,10 @@ export class Ref extends Resource {
   commitOid: string;
   treeOid: string;
 
-  constructor(readonly repo: Repo, readonly ref: string) {
+  constructor(
+    readonly repo: Repo,
+    readonly ref: string,
+  ) {
     super();
   }
 
@@ -54,14 +57,18 @@ export class Ref extends Resource {
           }
         }
       }`,
-      { owner: this.repo.owner, name: this.repo.name, ref: this.ref }
+      { owner: this.repo.owner, name: this.repo.name, ref: this.ref },
     );
     this.name = (response.data as ResponseShape).data.repository.ref.name;
     this.prefix = (response.data as ResponseShape).data.repository.ref.prefix;
-    this.commitOid = (response.data as ResponseShape).data.repository.ref.commit.oid;
-    this.treeOid = (response.data as ResponseShape).data.repository.ref.commit.tree.oid;
+    this.commitOid = (
+      response.data as ResponseShape
+    ).data.repository.ref.commit.oid;
+    this.treeOid = (
+      response.data as ResponseShape
+    ).data.repository.ref.commit.tree.oid;
     this.debug(
-      `Ref: ${this.fullyQualifiedName}, prefix: ${this.prefix}, commitOid: ${this.commitOid}, treeOid: ${this.treeOid}`
+      `Ref: ${this.fullyQualifiedName}, prefix: ${this.prefix}, commitOid: ${this.commitOid}, treeOid: ${this.treeOid}`,
     );
   }
 
@@ -70,7 +77,7 @@ export class Ref extends Resource {
     // Via: PATCH https://api.github.com/repos/$GITHUB_REPOSITORY/git/$REF
     await this.github.patch(
       `/repos/${this.repo.nameWithOwner}/git/${this.fullyQualifiedName}`,
-      { sha }
+      { sha },
     );
   }
 }

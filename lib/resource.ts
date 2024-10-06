@@ -17,7 +17,7 @@ export default abstract class Resource implements Saveable {
 
   protected graphql(
     query: string,
-    variables: Record<string, unknown>
+    variables: Record<string, unknown>,
   ): Promise<AxiosResponse<unknown>> {
     const body: Record<string, unknown> = {
       query,

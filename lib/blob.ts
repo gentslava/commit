@@ -15,7 +15,7 @@ export class Blob extends Resource {
   constructor(
     readonly repo: Repo,
     readonly baseDir: string,
-    readonly file: string
+    readonly file: string,
   ) {
     super();
     this.absoluteFilePath = join(baseDir, file);
@@ -58,7 +58,7 @@ export class Blob extends Resource {
   async save(): Promise<void> {
     const response = await this.github.post(
       `/repos/${this.repo.nameWithOwner}/git/blobs`,
-      this.stream
+      this.stream,
     );
     this.sha = response.data.sha;
     this.debug(`Sha for blob ${this.file}: ${this.sha}.`);
@@ -73,7 +73,7 @@ export interface Options {
 export function getBlobsFromFiles(
   repo: Repo,
   files: string,
-  options: Options = {}
+  options: Options = {},
 ): Blob[] {
   const { baseDir } = options;
   return files
